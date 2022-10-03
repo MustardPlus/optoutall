@@ -15,6 +15,11 @@ body {
 	font-family: 'Arial';
 	color: black;
 	overflow-x: hidden;
+	background-color: #000;
+}
+
+#wrapper {
+	
 }
 
 .cancel {
@@ -92,6 +97,13 @@ body {
 	margin-right: 8px;
 }
 
+#front_logo {
+	/*filter: drop-shadow(2px 2px 0px #FFF);*/
+	background-image: url('assets/structure/backsplash.png');
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
 #footer {
 	font-family: 'Poppins', sans-serif;
 	font-size: 24px;
@@ -103,14 +115,34 @@ body {
 	user-select: none;
 }
 
+#footzone {
+	width: 100%;
+}
+
+#footzone img {
+	width: 80%;
+	height: auto;
+	position: fixed;
+	z-index: -10;
+	transition: bottom 0.2s;
+}
+
+.bg_view1 {
+	bottom: -160%
+}
+.bg_view2 {
+	bottom: 0px;
+}
+@media screen and (max-width: 1200px) {
+  .bg_view1 {
+    bottom: -8%;
+  }
+}
+
 .sampler {
 	background: #000;
 	height: 20vh;
 	z-index: -1;	
-}
-
-#front_logo {
-	position: absolute;
 }
 
 #publish_front {
