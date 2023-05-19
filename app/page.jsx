@@ -1,3 +1,4 @@
+"use client";
 import Branding from '@components/Branding';
 import NoBandGroup from '@components/NoBandGroup';
 import LinkBandGroup from '@components/LinkBandGroup';
@@ -6,8 +7,30 @@ import Footer from '@components/Footer';
 import imgAbyss from '@public/assets/structure/abyss.png';
 import txtCheck from '@public/assets/structure/checkurs.png';
 import Image from 'next/image';
+import { useEffect } from 'react';
 
 const Home = () => {
+    const onScroll = () => {
+        let cbg = document.getElementById("cbg");
+        let trigger = document.getElementById("fronter");
+        
+        let elementTop = trigger.getBoundingClientRect().top;
+        let mark1 = -80;
+    
+        if (elementTop < mark1) {
+            cbg.classList.add("bg_view2");
+            cbg.classList.remove("bg_view1");
+        } else {
+            cbg.classList.add("bg_view1");
+            cbg.classList.remove("bg_view2");
+        }
+    }
+    
+    useEffect(() => {
+        window.addEventListener('scroll', onScroll);
+        return () => window.removeEventListener('scroll', onScroll);
+    });
+
     return (
         <div id="wrapper">
             <div className="flex">
